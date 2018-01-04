@@ -14,14 +14,16 @@ class Post: NSObject {
     var media: PFFile
     var author: PFUser
     var caption: String?
-
+    var time: Date?
     
     init(pfObject: PFObject) {
         self.media = pfObject["media"] as! PFFile
         self.author = pfObject["author"] as! PFUser
         self.caption = pfObject["caption"] as? String
-    }
     
+        self.time = pfObject["time"] as? Date
+        
+    }
     
     /**
      Method to add a user post to Parse (uploading image file)
@@ -41,9 +43,9 @@ class Post: NSObject {
         post["media"] = getPFFileFromImage(image: image) // PFFile column type
         post["author"] = PFUser.current() // Pointer column type that points to PFUser
         post["caption"] = caption
-
-        
         // Save object (following function will save the object in Parse asynchronously)
+        post["time"] = Date()
+
         post.saveInBackground(block: completion)
     }
     

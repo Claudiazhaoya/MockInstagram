@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +31,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instagram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhM-DQ-NbG">
                                 <rect key="frame" x="102" y="60" width="170" height="46"/>
@@ -54,7 +55,6 @@
                                 <color key="backgroundColor" red="0.66035618939999996" green="0.79099832059999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="loginButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Vv-V6-EkZ"/>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BMN-ne-9vb"/>
                                 </connections>
                             </button>
@@ -92,29 +92,51 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="424.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3iA-Jp-coU">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3iA-Jp-coU" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="48" width="375" height="336"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="336" id="NdQ-fP-YXx"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVW-1k-SQH">
-                                                    <rect key="frame" x="15" y="11" width="104" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVW-1k-SQH">
+                                                    <rect key="frame" x="8" y="12.5" width="84" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6g-Sj-kG0">
-                                                    <rect key="frame" x="15" y="393" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Claudiazhaoya" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6g-Sj-kG0">
+                                                    <rect key="frame" x="14" y="393" width="147" height="18"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="147" id="2Ug-Pb-ig5"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HL1-pR-th7">
+                                                    <rect key="frame" x="100" y="12.5" width="30" height="18.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3iA-Jp-coU" firstAttribute="leading" secondItem="7fG-0q-g72" secondAttribute="leading" id="2ms-r5-Lcp"/>
+                                                <constraint firstItem="3iA-Jp-coU" firstAttribute="top" secondItem="HL1-pR-th7" secondAttribute="bottom" constant="17" id="BYs-Wd-PLh"/>
+                                                <constraint firstItem="3iA-Jp-coU" firstAttribute="top" secondItem="7fG-0q-g72" secondAttribute="top" constant="48" id="S9r-p9-rbD"/>
+                                                <constraint firstItem="zVW-1k-SQH" firstAttribute="leading" secondItem="7fG-0q-g72" secondAttribute="leading" constant="8" id="bVd-ss-f7i"/>
+                                                <constraint firstItem="HL1-pR-th7" firstAttribute="top" secondItem="zVW-1k-SQH" secondAttribute="top" id="lB5-eY-UXA"/>
+                                                <constraint firstItem="HL1-pR-th7" firstAttribute="leading" secondItem="zVW-1k-SQH" secondAttribute="trailing" constant="8" id="sMQ-eL-Ofb"/>
+                                                <constraint firstItem="O6g-Sj-kG0" firstAttribute="leading" secondItem="7fG-0q-g72" secondAttribute="leadingMargin" constant="-1" id="v6d-Ib-D79"/>
+                                                <constraint firstItem="3iA-Jp-coU" firstAttribute="top" secondItem="zVW-1k-SQH" secondAttribute="bottom" constant="15" id="vif-13-heT"/>
+                                                <constraint firstAttribute="trailing" secondItem="3iA-Jp-coU" secondAttribute="trailing" id="yQb-75-hsb"/>
+                                                <constraint firstItem="O6g-Sj-kG0" firstAttribute="top" secondItem="3iA-Jp-coU" secondAttribute="bottom" constant="9" id="zdA-CD-B9R"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="captionLabel" destination="O6g-Sj-kG0" id="cnz-LQ-3pv"/>
-                                            <outlet property="postImage" destination="3iA-Jp-coU" id="o89-Ye-AJ9"/>
+                                            <outlet property="postImage" destination="3iA-Jp-coU" id="ELq-4Y-cR9"/>
+                                            <outlet property="timeLabel" destination="HL1-pR-th7" id="aIo-sa-4q4"/>
                                             <outlet property="usernameLabel" destination="zVW-1k-SQH" id="A1B-Z0-qee"/>
                                         </connections>
                                     </tableViewCell>

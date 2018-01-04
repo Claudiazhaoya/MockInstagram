@@ -65,6 +65,10 @@ extension PostTableViewController: UITableViewDelegate, UITableViewDataSource {
         cell.post = post
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 425
+    }
 }
 
 
